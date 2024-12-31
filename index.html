@@ -1,46 +1,93 @@
-document.getElementById('login-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const studentId = document.getElementById('student-id').value;
-  const password = document.getElementById('password').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Group Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Research Group</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" onclick="scrollToTop()">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#researchers">Researchers</a></li>
+        <li><a href="#students">Student Info</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Current Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home">
+    <h2>Welcome Message</h2>
+    <p>Welcome to the official website of our research group. We are dedicated to advancing knowledge and fostering innovation. Explore our site to learn more about us, our members, and our work.</p>
+    
+    <h2>Supervisor</h2>
+    <div class="supervisor">
+      <img src="images/201.jpg" alt="Supervisor Dr. Maruf Ahmed">
+      <div class="supervisor-message">
+        <h3>Dr. Maruf Ahmed</h3>
+        <p>Dr. Maruf Ahmed is the esteemed supervisor of our research group. His guidance and expertise inspire us to push the boundaries of knowledge and innovation.</p>
+      </div>
+    </div>
+  </section>
   
-  // Check credentials
-  if (studentId === '1807052' && password === '1807052') {
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('student-profile').style.display = 'block';
-  } else {
-    alert('Invalid Student ID or Password!');
-  }
-});
-
-document.getElementById('profile-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Information about the research group, its objectives, history, and notable achievements.</p>
+  </section>
   
-  const name = document.getElementById('profile-name').value;
-  const studentId = document.getElementById('profile-id').value;
-  const batch = document.getElementById('profile-batch').value;
-  const interests = document.getElementById('profile-interests').value;
-  const image = document.getElementById('profile-image').files[0];
-
-  // Create a student card
-  const studentCard = document.createElement('div');
-  studentCard.className = 'student-card';
+  <section id="researchers">
+    <h2>Current Researchers</h2>
+    <p>List of current researchers categorized by batch.</p>
+    <h2>Researcher Alumni</h2>
+    <p>List of alumni with their details.</p>
+  </section>
   
-  const imgElement = document.createElement('img');
-  imgElement.src = URL.createObjectURL(image);
-  imgElement.alt = name;
-  imgElement.width = 100;
+  <section id="students">
+    <h2>Student Information</h2>
+    <form id="login-form">
+      <label for="student-id">Student ID:</label>
+      <input type="text" id="student-id" name="student-id" value="1807052" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" value="1807052" required>
+      <button type="submit">Login</button>
+    </form>
+    <div id="student-profile" style="display: none;">
+      <h2>Student Profile</h2>
+      <form id="profile-form">
+        <label for="profile-name">Name:</label>
+        <input type="text" id="profile-name" name="profile-name" required>
+        <label for="profile-id">Student ID:</label>
+        <input type="text" id="profile-id" name="profile-id" required>
+        <label for="profile-batch">Batch:</label>
+        <input type="text" id="profile-batch" name="profile-batch" required>
+        <label for="profile-interests">Research Interests:</label>
+        <input type="text" id="profile-interests" name="profile-interests" required>
+        <label for="profile-image">Upload Image:</label>
+        <input type="file" id="profile-image" name="profile-image" accept="image/*" required>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="student-cards"></div>
+    </div>
+  </section>
   
-  const cardContent = document.createElement('div');
-  cardContent.innerHTML = `<h3>${name}</h3>
-                           <p>Student ID: ${studentId}</p>
-                           <p>Batch: ${batch}</p>
-                           <p>Research Interests: ${interests}</p>`;
+  <section id="publications">
+    <h2>Publications</h2>
+    <p>List of publications by year with images, journal names, and impact factors.</p>
+  </section>
   
-  studentCard.appendChild(imgElement);
-  studentCard.appendChild(cardContent);
+  <section id="projects">
+    <h2>Current Projects</h2>
+    <p>Overview of ongoing research projects with detailed descriptions.</p>
+  </section>
   
-  document.getElementById('student-cards').appendChild(studentCard);
-
-  // Reset form
-  document.getElementById('profile-form').reset();
-});
+  <footer>
+    <p>&copy; 2024 Research Group. All rights reserved.</p>
+  </footer>
+  
+  <script src="scripts.js"></script>
+</body>
+</html>
