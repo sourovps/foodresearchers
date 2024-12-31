@@ -115,6 +115,29 @@ button:hover {
   display: flex;
   align-items: center;
 }
+.publication-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.publication-list li {
+  margin-bottom: 1rem;
+}
+
+.publication-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.publication-authors {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.publication-journal {
+  font-size: 0.85em;
+  color: #777;
+}
 
 .student-card img {
   border-radius: 50%;
