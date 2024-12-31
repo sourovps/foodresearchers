@@ -83,20 +83,52 @@ button:hover {
   background-color: #45a049;
 }
 
-.supervisor {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
+.supervisor, .profile {
+  margin-bottom: 2rem;
 }
 
-.supervisor img {
+.supervisor img, .profile img {
   max-width: 200px;
   border-radius: 5px;
   margin-right: 1rem;
 }
 
-.supervisor-message {
+.supervisor-message, .profile-message {
   max-width: 600px;
+}
+
+.date {
+  float: right;
+  font-size: 0.8em;
+  color: #777;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+ul li .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.profile h4 {
+  margin-top: 1rem;
+}
+
+.profile p, .profile ul {
+  margin-bottom: 1rem;
+}
+
+.profile a {
+  color: #4CAF50;
 }
 
 #student-profile {
@@ -115,6 +147,7 @@ button:hover {
   display: flex;
   align-items: center;
 }
+
 .publication-list {
   list-style-type: none;
   padding: 0;
